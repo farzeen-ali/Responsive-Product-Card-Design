@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+}
+
+.heading{
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px #1b1a1a;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 10px 25px #1b1a1a;
+    backdrop-filter: blur(15px);
+}
+.container .card:hover .image{
+    transform: translateY(-80px);
+}
+.container .card:hover .image img{
+    transform: translate(-20px, -40px) rotate(25deg) scale(1.2);
+}
+.container .card::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(14, 13, 13);
+    clip-path: circle(36% at 100% 0%);
+}
+.container .card::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: circle(30% at 0% 100%);
+}
+.container .card:nth-child(1)::before
+{
+    background: rgb(14, 13, 13);
+}
+.container .card:nth-child(1)::after
+{
+    background: rgb(14, 13, 13);
+}
+.container .card:nth-child(2)::before
+{
+    background: rgb(7, 120, 176);
+}
+.container .card:nth-child(2)::after
+{
+    background: rgb(7, 120, 176);
+}
+.container .card:nth-child(3)::before
+{
+    background: rgb(3, 64, 10) ;
+}
+.container .card:nth-child(3)::after
+{
+    background: rgb(3, 64, 10) ;
+}
+.container .card .image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: .5s ease-in;
+}
+
+.container .card .image img{
+    max-width: 100%;
+    margin: 0px 0px 20px;
+    transition: .5s ease-in;
+}
+.container .card .image h2{
+   margin-bottom: 20px;
+}
+
+.container .card .details{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in;
+}
+
+.container .card .details .price, .container .card .details .brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .details .price p, .container .card .details .brand p{
+    text-align: center;
+    color: #fff;
+    background: #1b1a1a;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.container .card .details a{
+    text-align: center;
+    color: #fff;
+    background: #1b1a1a;
+    padding: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    
+}
+
+.container .card:hover .details{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50px);
+}
